@@ -21,7 +21,7 @@ class HqlQueries {
     }
 
     val allAwards: String
-        get() { // works
+        get() {
             val session = sessionFactory!!.openSession()
             val results = session
                 .createQuery<Award?>("FROM Award a", Award::class.java)

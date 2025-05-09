@@ -1,24 +1,24 @@
 package my.example.awards.queries
 
 import jakarta.persistence.EntityManager
-import jakarta.persistence.Persistence
 import my.example.awards.utils.QueryResultPrettier.concatenateObjects
 import my.example.awards.utils.QueryResultPrettier.printObjects
+import org.hibernate.cfg.Configuration
 
 class JpqlQueries {
     private val entityManager: EntityManager?
 
     init {
-        try { // use unit from persistence.xml
-            val entityManagerFactory = Persistence.createEntityManagerFactory("jpa-default")
-            entityManager = entityManagerFactory.createEntityManager()
+        try {
+            entityManager = Configuration().configure("hibernate.cfg.xml")
+                .buildSessionFactory().createEntityManager()
         } catch (ex: Throwable) {
             throw ExceptionInInitializerError(ex)
         }
     }
 
     val allAwards: String
-        get() { // works
+        get() {
             val results = entityManager!!
                 .createQuery("FROM Award a")
                 .resultList

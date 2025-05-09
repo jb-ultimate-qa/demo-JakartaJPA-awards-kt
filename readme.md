@@ -1,10 +1,16 @@
-**Jakarta EE 10 demo project**
+### About branch
+- Hibernate facet
+- hibernate.cfg.xml
+
+
+### About project
+- Jakarta EE 10
 - JPA (Hibernate)
 - JAX-RS
 
 JPQL, HQL, SQL queries for PostgreSQL DB, sample data is in resources.
 
-Need to use application server to run this app.
+Need to use WildFly application server to run this app.
 
 Example configuration is in `.idea/runConfigurations/JBoss_WildFly_35_0_0_Final.xml`
 
