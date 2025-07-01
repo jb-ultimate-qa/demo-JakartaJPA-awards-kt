@@ -16,7 +16,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <junit.version>5.10.2</junit.version>
 
-        <kotlin.version>2.1.0</kotlin.version>
+        <kotlin.version>2.2.0</kotlin.version>
     </properties>
 
     <dependencies>
@@ -104,8 +104,8 @@
                     <!-- We can choose any JVM target. -->
                     <jvmTarget>17</jvmTarget>
                     <!-- We DO need 2.0 or later. -->
-                    <languageVersion>2.0</languageVersion>
-                    <apiVersion>2.0</apiVersion>
+                    <languageVersion>2.2</languageVersion>
+                    <apiVersion>2.2</apiVersion>
 
                     <compilerPlugins>
                         <plugin>all-open</plugin>
