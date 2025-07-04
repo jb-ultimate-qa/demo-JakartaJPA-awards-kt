@@ -18,6 +18,7 @@
     <mapping class="my.example.awards.model.Award"/>
     <mapping class="my.example.awards.model.Competition"/>
     <mapping class="my.example.awards.model.License"/>
+    <mapping class="my.example.awards.model.LicenseInfo"/>
     <mapping class="my.example.awards.model.Location"/>
     <mapping class="my.example.awards.model.Person"/>
     <mapping class="my.example.awards.model.Player"/>
