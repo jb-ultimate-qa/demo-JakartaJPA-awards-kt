@@ -1,15 +1,27 @@
 package my.example.awards.model
 
-import jakarta.persistence.Column
-import jakarta.persistence.Embedded
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
-import jakarta.persistence.Table
+import jakarta.persistence.*
+import org.hibernate.annotations.NamedNativeQueries
+import org.hibernate.annotations.NamedNativeQuery
+import org.hibernate.annotations.NamedQueries
+import org.hibernate.annotations.NamedQuery
 
 @Entity
 @Table(name = "license")
+@NamedQueries(value = [
+    NamedQuery(
+        name = "HQL.License.findByLicenseNumber103",
+        query = "select new my.example.awards.model.dto.LicenseDTO(licenseNumber, licenseInfo.serialNumber, licenseInfo.description) " +
+                "from License l where l.licenseInfo.serialNumber = 103"
+    )
+])
+@NamedNativeQueries(value = [
+    NamedNativeQuery(
+        name = "SQL.License.findByLicenseNumber102",
+        query = "select * from license where sn = 102",
+        resultClass = License::class
+    )
+])
 class License {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,4 +33,8 @@ class License {
 
     @Embedded
     var licenseInfo: LicenseInfo? = null
+
+    override fun toString(): String {
+        return "License(id=$id, number=$licenseNumber, sn=${licenseInfo?.serialNumber}, description=${licenseInfo?.description})"
+    }
 }

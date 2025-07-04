@@ -11,5 +11,6 @@ class HelloResource {
     fun hello() = "Hello, User!" +
                 "Try this URL:</br></br><a href=\"awards\">awards</a></br>" +
                 "<a href=\"players\">players</a></br>" +
-                "<a href=\"referee\">referee</a></br>"
+                "<a href=\"referee\">referee</a></br>" +
+                "<a href=\"licenses\">licenses</a></br>"
 }

@@ -43,4 +43,12 @@ class JpqlQueries {
         printObjects<Any?>(results)
         return concatenateObjects<Any?>(results)
     }
+
+    fun getLicenseUsingNamingQuery(): String {
+        val results = entityManager!!
+            .createNamedQuery("HQL.License.findByLicenseNumber103")
+            .resultList
+        printObjects<Any?>(results)
+        return concatenateObjects<Any?>(results)
+    }
 }

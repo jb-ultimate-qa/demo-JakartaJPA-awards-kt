@@ -1,6 +1,7 @@
 package my.example.awards.queries
 
 import my.example.awards.model.Award
+import my.example.awards.model.License
 import my.example.awards.model.Referee
 import my.example.awards.utils.QueryResultPrettier.concatenateObjects
 import my.example.awards.utils.QueryResultPrettier.printObjects
@@ -51,5 +52,14 @@ class HqlQueries {
 
         printObjects<Referee?>(results)
         return concatenateObjects<Referee?>(results)
+    }
+
+    fun getLicenseUsingNamingQuery(): String {
+        val session = sessionFactory!!.openSession()
+        val results = session.createNamedQuery("HQL.License.findByLicenseNumber103", License::class.java)
+            .resultList
+
+        printObjects<License?>(results)
+        return concatenateObjects<License?>(results)
     }
 }
