@@ -12,14 +12,9 @@ class PlayersResource {
     @get:Path("/")
     @get:Produces("text/html")
     @get:GET
-    val links: String
-        get() = generateHtmlLinks("players", "jpql-get-from-sport-club")
+    val links: String = generateHtmlLinks("players", "jpql-get-from-sport-club")
 
     @get:Path("jpql-get-from-sport-club")
     @get:GET
-    val playersFormCitySportClub: String?
-        get() {
-            val jpqlQueries = JpqlQueries()
-            return jpqlQueries.getPlayersBySchool("City Sports Club")
-        }
+    val playersFormCitySportClub: String? = JpqlQueries.getPlayersBySchool("City Sports Club")
 }

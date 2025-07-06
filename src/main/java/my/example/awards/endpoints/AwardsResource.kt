@@ -14,42 +14,25 @@ class AwardsResource {
     @get:Path("/")
     @get:Produces("text/html")
     @get:GET
-    val links: String
-        get() = generateHtmlLinks("awards",
-            "jpql-get-all",
-            "hql-get-all",
-            "hql-get-awards-of-high-rated-players",
-            "sql-get-awards-after-2022")
+    val links: String = generateHtmlLinks("awards",
+        "jpql-get-all",
+        "hql-get-all",
+        "hql-get-awards-of-high-rated-players",
+        "sql-get-awards-after-2022")
 
     @get:Path("jpql-get-all")
     @get:GET
-    val allAwards: String?
-        get() {
-            val jpqlQueries = JpqlQueries()
-            return jpqlQueries.allAwards
-        }
+    val allAwards: String? = JpqlQueries.allAwards
 
     @get:Path("hql-get-all")
     @get:GET
-    val allAwardsHibernate: String?
-        get() {
-            val hqlQueries = HqlQueries()
-            return hqlQueries.allAwards
-        }
+    val allAwardsHibernate: String? = HqlQueries.allAwards
 
     @get:Path("hql-get-awards-of-high-rated-players")
     @get:GET
-    val awardsOfHighRatedPlayers: String?
-        get() {
-            val hqlQueries = HqlQueries()
-            return hqlQueries.awardsOfHighRatedPlayers
-        }
+    val awardsOfHighRatedPlayers: String? = HqlQueries.awardsOfHighRatedPlayers
 
     @get:Path("sql-get-awards-after-2022")
     @get:GET
-    val awardsAfter2022: String?
-        get() {
-            val sqlQueries = SqlQueries()
-            return sqlQueries.awardsAfter2022
-        }
+    val awardsAfter2022: String? = SqlQueries.awardsAfter2022
 }

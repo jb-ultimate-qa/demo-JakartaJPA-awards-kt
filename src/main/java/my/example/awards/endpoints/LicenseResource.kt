@@ -14,34 +14,21 @@ class LicenseResource {
     @get:Path("/")
     @get:Produces("text/html")
     @get:GET
-    val links: String
-        get() = generateHtmlLinks("licenses",
-            "get-by-hql-named-query-1",
-            "get-by-hql-named-query-2",
-            "get-by-sql-named-query"
-        )
+    val links: String = generateHtmlLinks("licenses",
+        "get-by-hql-named-query-1",
+        "get-by-hql-named-query-2",
+        "get-by-sql-named-query"
+    )
 
     @get:Path("get-by-hql-named-query-1")
     @get:GET
-    val licenseUsingNamingQuery1: String?
-        get() {
-            val jpqlQueries = JpqlQueries()
-            return jpqlQueries.getLicenseUsingNamingQuery()
-        }
+    val licenseUsingNamingQuery1: String? = JpqlQueries.getLicenseUsingNamingQuery()
 
     @get:Path("get-by-hql-named-query-2")
     @get:GET
-    val licenseUsingNamingQuery2: String?
-        get() {
-            val hqlQueries = HqlQueries()
-            return hqlQueries.getLicenseUsingNamingQuery()
-        }
+    val licenseUsingNamingQuery2: String? = HqlQueries.getLicenseUsingNamingQuery()
 
     @get:Path("get-by-sql-named-query")
     @get:GET
-    val licenseUsingNamingQuery3: String?
-        get() {
-            val sqlQueries = SqlQueries()
-            return sqlQueries.licensesNamedQuery
-        }
+    val licenseUsingNamingQuery3: String? = SqlQueries.licensesNamedQuery
 }

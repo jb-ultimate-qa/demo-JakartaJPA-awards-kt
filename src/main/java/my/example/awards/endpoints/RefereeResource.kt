@@ -11,14 +11,10 @@ class RefereeResource {
     @get:Path("/")
     @get:Produces("text/html")
     @get:GET
-    val links: String
-        get() = generateHtmlLinks("referee", "hql-get-with-licence-number")
+    val links: String = generateHtmlLinks("referee", "hql-get-with-licence-number")
 
     @get:Path("hql-get-with-licence-number")
     @get:GET
-    val refereeByLicenceNumber: String?
-        get() {
-            val hqlQueries = HqlQueries()
-            return hqlQueries.getRefereeByLicenceNumber("LR001")
-        }
+    val refereeByLicenceNumber: String? = HqlQueries.getRefereeByLicenceNumber("LR001")
+
 }
