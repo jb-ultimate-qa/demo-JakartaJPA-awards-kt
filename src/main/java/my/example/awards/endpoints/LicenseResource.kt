@@ -6,6 +6,7 @@ import jakarta.ws.rs.Produces
 import my.example.awards.queries.HqlQueries
 import my.example.awards.queries.JpqlQueries
 import my.example.awards.queries.SqlQueries
+import my.example.awards.utils.HtmlHelper.generateHtmlLinks
 
 @Path("/licenses")
 @Produces("text/plain")
@@ -14,10 +15,11 @@ class LicenseResource {
     @get:Produces("text/html")
     @get:GET
     val links: String
-        get() = """Try this URL:</br></br>
-        |<a href="licenses/get-by-hql-named-query-1">awards/get-by-hql-named-query-1</a></br>
-        |<a href="licenses/get-by-hql-named-query-2">awards/get-by-hql-named-query-2</a></br>
-        |<a href="licenses/get-by-sql-named-query">awards/get-by-sql-named-query</a>""".trimMargin()
+        get() = generateHtmlLinks("licenses",
+            "get-by-hql-named-query-1",
+            "get-by-hql-named-query-2",
+            "get-by-sql-named-query"
+        )
 
     @get:Path("get-by-hql-named-query-1")
     @get:GET
@@ -37,7 +39,7 @@ class LicenseResource {
 
     @get:Path("get-by-sql-named-query")
     @get:GET
-    val awardsAfter2022: String?
+    val licenseUsingNamingQuery3: String?
         get() {
             val sqlQueries = SqlQueries()
             return sqlQueries.licensesNamedQuery

@@ -1,11 +1,11 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Tomcat 10.1.39" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.39" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-    <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/demo_JPA_awards_kt_war/hello" />
+    <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/demo_JPA_awards_kt_war_exploded/hello" />
     <option name="UPDATING_POLICY" value="restart-server" />
     <deployment>
-      <artifact name="demo-JPA-awards-kt:war">
+      <artifact name="demo-JPA-awards-kt:war exploded">
         <settings>
-          <option name="CONTEXT_PATH" value="/demo_JPA_awards_kt_war" />
+          <option name="CONTEXT_PATH" value="/demo_JPA_awards_kt_war_exploded" />
         </settings>
       </artifact>
     </deployment>
@@ -83,7 +83,7 @@
     <method v="2">
       <option name="Make" enabled="true" />
       <option name="BuildArtifacts" enabled="true">
-        <artifact name="demo-JPA-awards-kt:war" />
+        <artifact name="demo-JPA-awards-kt:war exploded" />
       </option>
     </method>
   </configuration>

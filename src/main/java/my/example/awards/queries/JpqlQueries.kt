@@ -34,7 +34,6 @@ class JpqlQueries {
                     select pl.fullName from Player pl
                         join pl.sportSchools ss
                         where ss.title = ?1
-                    
                     """.trimIndent()
             )
             .setParameter(1, sportSchoolName)
