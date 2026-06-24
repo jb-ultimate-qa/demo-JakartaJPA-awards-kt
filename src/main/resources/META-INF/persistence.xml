@@ -8,12 +8,14 @@
         <class>my.example.awards.model.Award</class>
         <class>my.example.awards.model.Competition</class>
         <class>my.example.awards.model.License</class>
+        <class>my.example.awards.model.LicenseInfo</class>
         <class>my.example.awards.model.Location</class>
         <class>my.example.awards.model.Person</class>
         <class>my.example.awards.model.Player</class>
         <class>my.example.awards.model.Referee</class>
         <class>my.example.awards.model.SportSchool</class>
 
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/awards"/>
