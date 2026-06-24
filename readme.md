@@ -1,8 +1,3 @@
-### About branch
-- JPA facet
-- persistence.xml
-
-
 ### About project
 - Jakarta EE 10
 - JPA (Hibernate)
