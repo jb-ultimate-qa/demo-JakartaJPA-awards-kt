@@ -6,16 +6,16 @@
 
     <groupId>my.example</groupId>
     <artifactId>demo-JPA-awards-kt</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1-SNAPSHOT</version>
     <name>demo-JPA-awards-kt</name>
     <packaging>war</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.target>17</maven.compiler.target>
-        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
         <junit.version>5.10.2</junit.version>
-        <kotlin.version>2.2.0</kotlin.version>
+        <kotlin.version>2.4.20</kotlin.version>
     </properties>
 
     <dependencies>
@@ -119,6 +119,7 @@
     </dependencies>
 
     <build>
+        <sourceDirectory>src/main/kotlin</sourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
@@ -142,10 +143,10 @@
                 </executions>
                 <configuration>
                     <!-- We can choose any JVM target. -->
-                    <jvmTarget>17</jvmTarget>
+                    <jvmTarget>21</jvmTarget>
                     <!-- We DO need 2.0 or later. -->
-                    <languageVersion>2.2</languageVersion>
-                    <apiVersion>2.2</apiVersion>
+                    <languageVersion>2.4</languageVersion>
+                    <apiVersion>2.4</apiVersion>
 
                     <compilerPlugins>
                         <plugin>all-open</plugin>
@@ -179,8 +180,8 @@
                 <version>3.8.1</version>
                 <configuration>
                     <!-- We can choose any JVM target. -->
-                    <source>17</source>
-                    <target>17</target>
+                    <source>21</source>
+                    <target>21</target>
                 </configuration>
             </plugin>
             <plugin>
